@@ -1,0 +1,22 @@
+body{
+	background-color: rgba(23, 32, 42  ) ;
+}
+
+#color{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#color h2 , p {
+
+	color:#ffff;
+}
+
+#Review{
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+}
+

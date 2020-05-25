@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style/style_3.css')}}">
+
+    <title>Home</title>
+  </head>
+  <body>
+
+
+<div class="jumbotron p-4 p-md-5 text-white rounded bg-dark box_title">
+    <div class="col-md-6 px-0"><br>
+      <h1 class="display-4 font-italic">Web Programming with Python and JavaScript</h1>
+    </div>
+  </div>
+
+
+    <nav  class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="http://127.0.0.1:5000/signin">sign up</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div  class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://127.0.0.1:5000/">Logout<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/Ahmed-Ihsan">GitHub</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ahmed Ihsan</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<p class="lead mb-0"><a href="https://www.goodreads.com" class="text-white font-weight-bold"><h2><center>Goodreads</center><h2></a></p>
+  
+    <form action="http://127.0.0.1:5000/post" method="post">
+    <div class="input-group mb-3">
+    <input list="books" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2" name="Search" placeholder="Search.." >
+    <datalist id="books">
+      {% for data in book %}
+      <option value="{{data.isbn}} {{data.title}} {{data.author}} {{data.year}}">
+        {% endfor %}
+    </datalist>
+
+    <div class="input-group-append">
+    <input class="btn btn-outline-secondary" type="submit" value="Submit">
+    </div>
+   </div>
+   </form>
+
+    <center><h1 class="text-white">{{error}}</h1></center>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
